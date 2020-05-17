@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "419214007916",
+    "firebase_url": "https://future-prediction-34f29.firebaseio.com",
+    "project_id": "future-prediction-34f29",
+    "storage_bucket": "future-prediction-34f29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419214007916:android:63b11b65a777a7b60d0249",
+        "android_client_info": {
+          "package_name": "com.yogs.future"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKyMFkC5751n9C4PAO5R3Qpxow-acrSY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419214007916-i54qikldfefj9r8b7o2e9gl1010lat55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

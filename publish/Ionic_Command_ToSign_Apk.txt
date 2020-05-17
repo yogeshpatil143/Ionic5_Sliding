@@ -1,0 +1,80 @@
+Step-0:
+-------
+Build unsigned apk with below command.
+
+ionic cordova build android --release --prod  
+
+Step-1: (Not Required, as we already have my-android-release-key.keystore)
+--------
+c:\>keytool -genkey -v -keystore my-android-release-key.keystore -alias android_key -keyalg RSA -keysize 2048 -validity 10000
+password: Acc@2016
+
+Note: Debug Android Keystore:
+		Pass:Acc@2016
+		c:\>keytool -genkey -v -keystore my-android-debug-key.keystore -alias android_debug_key -keyalg RSA -keysize 2048 -validity 10000
+
+D:\andorid_keystore>keytool -genkey -v -keystore my-android-release-key.keystore -alias android_key -keyalg RSA -keysize 2048 -validity 10000
+Enter keystore password:
+Re-enter new password:
+What is your first and last name?
+  [Unknown]:  Lafarge Holcim
+What is the name of your organizational unit?
+  [Unknown]:  IT
+What is the name of your organization?
+  [Unknown]:  Holcim Services South Asia Limited
+What is the name of your City or Locality?
+  [Unknown]:  Mumbai
+What is the name of your State or Province?
+  [Unknown]:  Maharastra
+What is the two-letter country code for this unit?
+  [Unknown]:  IN
+Is CN=Lafarge Holcim, OU=IT, O=Holcim Services South Asia Limited, L=Mumbai, ST=
+Maharastra, C=IN correct?
+  [no]:  y
+
+
+
+Keystore Password: Acc@2016
+
+
+Step-2:
+-------
+copy unsigned APK and keep it on following path
+F:\Android_Signing>
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-android-release-key.keystore app-release-unsigned.apk android_key
+password: Acc@2016
+
+
+Step-3:
+-------
+./zipalign -v 4 app-release-unsigned.apk eTicket.apk - for Macos / linux
+zipalign -v 4 app-release-unsigned.apk eTicket.apk - for windows
+
+
+/////////////////////////////////////////////////////////////////////
+
+Testing The IOS App 
+
+Step-1: GO to site www.diawi.com asasmsa
+Step-2: Upload the .ipa file to the box area.
+Step-3: Uncheck the checkbox's (both) 
+Step-4: Click on Submit Button. 
+Step-5: Copy the URL and Passkey store it safe for future testing
+Step-6: Open safari browser, Access the URL and and enter the passkey to install the IOS App. 
+
+
+Customer Feedback:
+Step-1: Upload the ios or apk file to  https://www.diawi.com
+Step-2: access the bellow url and test it.
+https://i.diawi.com/kuuVPT
+Keypass: kuuVPT
+
+
+Change request - CHG0072190
+Dev build 
+package - com.lh.eticket.anz.dev
+App name - eTicketDev
+
+prod build 
+package - com.lh.eticket.anz
+App name - eTicket

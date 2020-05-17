@@ -1,0 +1,8 @@
+{
+  "name": "BoG_ACC_4",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
